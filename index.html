@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brikc Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="header-top">
+            <div class="user-badge" id="user-display">Загрузка...</div>
+            <button class="btn-primary" onclick="location.href='create.html'">Разместить объявление</button>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Поиск товаров..." style="flex-grow: 1;">
+            <select id="category-filter">
+                <option value="all">Все категории</option>
+                <option value="учебники">Учебники</option>
+                <option value="электроника">Электроника</option>
+                <option value="одежда">Одежда</option>
+                <option value="другое">Другое</option>
+            </select>
+            <select id="sort-filter">
+                <option value="newest">Сначала новые</option>
+                <option value="oldest">Сначала старые</option>
+                <option value="price-asc">Дешевле</option>
+                <option value="price-desc">Дороже</option>
+            </select>
+        </div>
+    </header>
+
+    <div id="ads-list" class="grid"></div>
+    <div id="pagination" style="display: flex; justify-content: center; gap: 10px; margin-top: 20px;"></div>
+</div>
+
+<!-- Модалка для ввода имени -->
+<div id="login-modal" class="custom-modal-overlay">
+    <div class="modal-card">
+        <h2>Добро пожаловать!</h2>
+        <p>Пожалуйста, введите ваш никнейм для работы с платформой:</p>
+        <input type="text" id="username-input" placeholder="Ваш никнейм..." style="width: 100%; margin: 15px 0;">
+        <button class="btn-primary" id="save-username-btn" style="width: 100%;">Войти</button>
+    </div>
+</div>
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>

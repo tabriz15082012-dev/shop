@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать объявление - Brikc</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" style="display: flex; justify-content: center; padding-top: 50px;">
+        <form class="modal-content" id="ad-form" style="display: flex; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <h2 id="page-title" style="margin: 0">Новое объявление</h2>
+            <input type="text" id="form-title" placeholder="Название" required>
+            <textarea id="form-description" placeholder="Описание" rows="6" required></textarea>
+            <input type="number" id="form-price" placeholder="Цена (₽)" required>
+            <input type="text" id="form-contact" placeholder="Контактные данные" required>
+            <input type="text" id="form-image" placeholder="Ссылка на фото (URL)">
+            <select id="form-category" required>
+                <option value="учебники">Учебники</option>
+                <option value="электроника">Электроника</option>
+                <option value="одежда">Одежда</option>
+                <option value="другое">Другое</option>
+            </select>
+            <div class="actions">
+                <button type="submit" class="btn-primary" style="flex-grow: 1;">Сохранить</button>
+                <button type="button" class="btn-secondary" onclick="location.href='index.html'">Отмена</button>
+            </div>
+        </form>
+    </div>
+    <script type="module" src="create.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Объявление - Brikc</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="btn-secondary" onclick="location.href='index.html'">← Назад к списку</button>
+        </header>
+        <div class="card" style="max-width: 600px; margin: 0 auto; cursor: default;">
+            <div id="view-image" style="width: 100%; height: 300px; background: #eee; border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden;"></div>
+            <h1 id="view-title"></h1>
+            <div class="price" id="view-price" style="font-size: 2rem;"></div>
+            <div class="desc" id="view-desc" style="white-space: pre-wrap; margin: 20px 0; font-size: 1.1rem;"></div>
+            <div id="view-contact" style="margin-bottom: 20px; padding: 15px; background: #f0fdf4; border-left: 4px solid #22c55e; border-radius: 8px;"></div>
+            <button class="btn-primary" id="buy-btn" style="width: 100%; font-size: 1.2rem; margin-bottom: 10px;">Купить</button>
+            <div class="meta" id="view-meta"></div>
+            <button id="fav-btn" class="btn-secondary" style="margin-top: 20px;">В избранное</button>
+
+            <!-- Блок отзывов -->
+            <div class="reviews-section" style="margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px; text-align: left;">
+                <h3>Отзывы</h3>
+                <div id="reviews-list"></div>
+                <div id="add-review-form" style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
+                    <textarea id="review-text" placeholder="Напишите ваш отзыв..." rows="3"></textarea>
+                    <button class="btn-primary" id="submit-review">Отправить отзыв</button>
+                </div>
+            </div>
+
+            <div id="author-actions" class="actions" style="display: none; margin-top: 30px;">
+                <button class="btn-primary" id="edit-btn">Редактировать</button>
+                <button class="btn-danger" id="delete-btn">Удалить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модалка для подтверждения покупки -->
+    <div id="buy-modal" class="custom-modal-overlay">
+        <div class="modal-card">
+            <h2>Подтверждение покупки</h2>
+            <p id="buy-modal-text"></p>
+            <div class="actions" style="margin-top: 20px;">
+                <button class="btn-primary" id="confirm-buy-btn" style="flex: 1;">Понятно</button>
+                <button class="btn-secondary" id="cancel-buy-btn" style="flex: 1;">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модалка для подтверждения удаления -->
+    <div id="confirm-modal" class="custom-modal-overlay">
+        <div class="modal-card">
+            <h2>Удалить объявление?</h2>
+            <p>Это действие нельзя будет отменить.</p>
+            <div class="actions" style="margin-top: 20px;">
+                <button class="btn-danger" id="confirm-delete-btn" style="flex: 1;">Да, удалить</button>
+                <button class="btn-secondary" id="cancel-delete-btn" style="flex: 1;">Отмена</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="item.js"></script>
+</body>
+</html>

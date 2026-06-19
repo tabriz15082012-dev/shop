@@ -76,3 +76,29 @@ export async function addReview(id, author, text) {
         await saveAll(data);
     }
 }
+
+
+// ... твой старый код (fetchAll, saveAll и т.д.) ...
+
+/**
+ * Функция для поиска картинок по ключевому слову
+ * @param {string} query - Поисковый запрос (например, 'iphone')
+ * @returns {Promise<Array>} - Массив объектов с картинками
+ */
+export async function searchExternalImages(query) {
+    if (!query) return [];
+
+    const url = `${CONFIG.PIXABAY_URL}?key=${CONFIG.PIXABAY_API_KEY}&q=${encodeURIComponent(query)}&image_type=photo&per_page=9`;
+
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Ошибка сети: ${response.status}`);
+        }
+        const data = await response.json();
+        return data.hits || []; // Возвращаем только массив найденных картинок
+    } catch (error) {
+        console.error('Ошибка при обращении к Pixabay API:', error);
+        return []; // В случае ошибки возвращаем пустой массив, чтобы код не падал
+    }
+}

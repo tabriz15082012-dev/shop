@@ -13,7 +13,19 @@
             <textarea id="form-description" placeholder="Описание" rows="6" required></textarea>
             <input type="number" id="form-price" placeholder="Цена (₽)" required>
             <input type="text" id="form-contact" placeholder="Контактные данные" required>
-            <label style="font-size: 0.9rem; color: var(--text-muted);">Загрузить фото:</label>
+            <label style="font-size: 0.9rem; color: var(--text-muted);">Картинка объявления:</label>
+<div style="display: flex; gap: 8px;">
+    <input type="text" id="search-image-query" placeholder="Что искать? (например: iphone, книга)">
+    <button type="button" class="btn-secondary" id="search-image-btn">Найти фото</button>
+</div>
+
+<div id="image-search-results" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 10px; max-height: 150px; overflow-y: auto;"></div>
+
+<input type="hidden" id="form-image-url">
+<div id="selected-image-preview" style="margin-top: 10px; display: none;">
+    <span style="font-size: 0.8rem; color: var(--text-muted);">Выбрано:</span>
+    <img id="preview-img" src="" style="width: 100px; height: 100px; object-fit: cover; border-radius: 8px; display: block; margin-top: 5px; border: 2px solid var(--primary);">
+</div>
             <input type="file" id="form-image-file" accept="image/*">
             <select id="form-category" required>
                 <option value="учебники">Учебники</option>
